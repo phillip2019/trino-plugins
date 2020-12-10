@@ -1,3 +1,8 @@
+# build csd
+```aspectj
+mvn 
+```
+
 # Presto Plugins
 
 This repo contains to following Presto plugins.
