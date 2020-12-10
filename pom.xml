@@ -36,7 +36,7 @@ under the License.
 		<zookeeper.version>3.4.10</zookeeper.version>
 		<parquet.version>2.4.0</parquet.version>
 		<avro.version>1.8.2-cdh6.3.2</avro.version>
-		<base-storage-handler.version>${presto.version}.1.0</base-storage-handler.version>
+		<base-storage-handler.version>1.0</base-storage-handler.version>
 	</properties>
 
 	<repositories>
