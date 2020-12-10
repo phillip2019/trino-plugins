@@ -14,14 +14,14 @@
 	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>com.facebook.presto</groupId>
-			<artifactId>presto-main</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<scope>test</scope>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.facebook.presto</groupId>
+			<artifactId>presto-main</artifactId>
+			<version>${presto.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
