@@ -26,7 +26,7 @@ under the License.
 	<packaging>pom</packaging>
 	<name>presto plugins</name>
 	<properties>
-		<presto.version>0.244.1</presto.version>
+		<presto.version>0.211</presto.version>
 		<guava.version>18.0</guava.version>
 		<javax.inject>1</javax.inject>
 		<junit.version>4.12</junit.version>
@@ -71,6 +71,7 @@ under the License.
 				<artifactId>presto-main</artifactId>
 				<version>${presto.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.facebook.presto/presto-jdbc -->
 			<dependency>
 				<groupId>com.facebook.presto</groupId>
 				<artifactId>presto-jdbc</artifactId>
