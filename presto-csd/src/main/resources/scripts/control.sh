@@ -9,8 +9,7 @@ PRESTO_JVM_FILE="$PRESTO_ETC/jvm.config"
 PRESTO_LOG_FILE=/var/log/presto
 DISCOVERY_HOST_PORT=`cat presto-coordinator.properties | sed 's/http-server\.http.port\=//'`
 DISCOVERY_URI="http://${DISCOVERY_HOST_PORT}"
-PATH=$PATH:$JAVA_HOME/bin
-export $PATH
+export PATH=$PATH:$JAVA_HOME/bin
 
 setup_node_id() {
   echo "setup_node_id"
