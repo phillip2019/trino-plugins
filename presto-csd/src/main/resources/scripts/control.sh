@@ -105,7 +105,8 @@ createCDHCatalogs() {
 
 setup_environment() {
   echo "setup_environment"
-  mkdir etc/catalog
+  pwd
+  mkdir -p etc/catalog
   if [ $? -ne 0 ]; then
 	echo "Could not create etc/catalog"
     exit 1
