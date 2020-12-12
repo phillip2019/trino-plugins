@@ -41,5 +41,9 @@
 			<source>${project.basedir}/src/assemble/parcel_env.sh</source>
 			<outputDirectory>${project.parcel.name}-${project.version}/meta</outputDirectory>
 		</file>
+		<file>
+			<source>${project.basedir}/src/assemble/permissions.json</source>
+			<outputDirectory>${project.parcel.name}-${project.version}/meta</outputDirectory>
+		</file>
 	</files>
 </assembly>

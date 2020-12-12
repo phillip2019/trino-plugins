@@ -65,10 +65,10 @@ cat > $PRESTO_DIR_META/parcel.json <<JSON
   "packages" : [],
   "users":  {
     "presto": {
-      "longname" : "presto",
-      "home" : "/var/lib/presto",
-      "shell" : "/bin/bash",
-      "extra_groups": []		
+      "longname": "persto",
+      "shell": "/bin/bash",
+      "home": "/var/lib/presto",
+      "extra_groups": ["hive", "presto"]
     }
   },
   "groups": []

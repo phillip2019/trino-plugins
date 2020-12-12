@@ -1,0 +1,12 @@
+{
+  "/var/lib/persto" : {
+    "user" : "persto",
+    "group" : "hive",
+    "permissions" : "0755"
+  },
+  "/var/log/persto" : {
+    "user" : "persto",
+    "group" : "hive",
+    "permissions" : "0755"
+  }
+}

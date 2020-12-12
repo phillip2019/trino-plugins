@@ -18,6 +18,13 @@
     }
   ],
   "packages" : [],
-  "users":  {},
+  "users":  {
+    "presto": {
+      "longname": "persto",
+      "shell": "/bin/bash",
+      "home": "/var/lib/presto",
+      "extra_groups": ["hive", "presto"]
+    }
+  },
   "groups": []
 }
