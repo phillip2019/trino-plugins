@@ -6,7 +6,7 @@
   "icon":"images/icon.png",
   "runAs" : {
     "user"  : "presto",
-    "group" : "presto"
+    "group" : "hive"
   },
   "rolesWithExternalLinks":["COORDINATOR","WORKER"],
   "hdfsDirs" : [],
@@ -68,7 +68,18 @@
       "name": "http_server_log_path",
       "required": true,
       "type": "string"
-    }
+    },
+    {
+      "configName": "log.level.com.facebook.presto",
+      "configurableInWizard": true,
+      "default": "INFO",
+      "description": "com.facebook.presto model log level",
+      "label": "Log level com.facebook.presto",
+      "name": "log_level_com_facebook_presto",
+      "required": true,
+      "validValues" : [ "DEBUG", "INFO", "WARN", "ERROR"],
+      "type": "string_enum"
+     }
 |||PRESTO_CLUSTER|||
   ],
   
@@ -114,7 +125,12 @@
             "filename" : "jvm.config",
             "configFormat" : "properties",
             "includedParams":["jvm_config","jvm_heap"]
-          }
+          },
+          {
+              "filename" : "log.properties",
+              "configFormat" : "properties",
+              "includedParams":["log_level_com_facebook_presto"]
+           }
         ],
         "peerConfigGenerators":[
           {
@@ -196,6 +212,11 @@
             "filename" : "jvm.config",
             "configFormat" : "properties",
             "includedParams":["jvm_config"]
+          },
+         {
+             "filename" : "log.properties",
+             "configFormat" : "properties",
+             "includedParams":["log_level_com_facebook_presto"]
           }
         ],
         "peerConfigGenerators":[

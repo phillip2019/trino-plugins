@@ -42,7 +42,7 @@ CONFIG
 setup_log_levels() {
   echo "setup_log_levels"
   cat > $PRESTO_LOG_LEVELS <<LOG
-com.facebook.presto=INFO
+com.facebook.presto=DEBUG
 LOG
 }
 
