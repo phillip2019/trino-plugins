@@ -70,7 +70,7 @@
       "type": "string"
     },
     {
-      "configName": "log.level.com.facebook.presto",
+      "configName": "com.facebook.presto",
       "configurableInWizard": true,
       "default": "INFO",
       "description": "com.facebook.presto model log level",
