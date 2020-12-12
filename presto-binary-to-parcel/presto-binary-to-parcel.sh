@@ -113,7 +113,7 @@ fi
 mkdir $HTTP_DIR
 MANIFEST="$HTTP_DIR/manifest.json"
 echo "{\"lastUpdated\":${LAST_UPDATED},\"parcels\": [" > $MANIFEST
-for DISTRO in el5 el6 sles11 lucid precise trusty squeeze wheezy
+for DISTRO in el5 el6 el7 sles11 lucid precise trusty squeeze wheezy
 do
 	if [ $DISTRO != "el5" ] ; then
 		echo "," >> $MANIFEST
