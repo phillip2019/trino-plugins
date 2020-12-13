@@ -229,7 +229,8 @@
         ],
         "auxConfigGenerators" : [
           {
-            "filename" : "catalog.properties"
+            "filename" : "catalog.json",
+            "configFormat" : "json"
           }
         ]
       },
