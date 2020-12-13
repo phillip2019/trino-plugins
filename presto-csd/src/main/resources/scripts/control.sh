@@ -106,6 +106,11 @@ createHiveCatalog() {
   echo 'hive.metastore.uri=thrift://bigdata-util-gateway-01.chinagoods.te:9083'>> etc/catalog/hive.properties
   echo 'hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml'>> etc/catalog/hive.properties
   echo 'hive.metastore.username=hive'>> etc/catalog/hive.properties
+  echo 'hive.security=sentry'>> etc/catalog/hive.properties
+  echo 'sentry.server=sentryserver'>> etc/catalog/hive.properties
+  echo 'sentry.admin-user=hive'>> etc/catalog/hive.properties
+  echo 'sentry.rpc-addresses=bigdata-util-gateway-01.chinagoods.te'>> etc/catalog/hive.properties
+  echo 'sentry.rpc-port=8038'>> etc/catalog/hive.properties
 }
 
 createCDHCatalogs() {
