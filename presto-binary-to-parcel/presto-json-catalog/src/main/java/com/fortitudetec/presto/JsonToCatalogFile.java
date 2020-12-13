@@ -54,7 +54,9 @@ public class JsonToCatalogFile {
     while (keys.hasNext()) {
       String name = (String) keys.next();
       Object value = jsonObject.get(name);
-      properties.setProperty(name, value.toString());
+      // 替换掉/符号为U，去掉转义符号
+      String escapeVal = value.toString().replace("//", "");
+      properties.setProperty(name, escapeVal);
     }
     FileOutputStream outputStream = new FileOutputStream(file);
     properties.store(outputStream, "Generated via fortitudetec json to catalog project.");

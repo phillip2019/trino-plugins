@@ -1,6 +1,6 @@
 # build csd
 ```aspectj
-mvn 
+mvn clean package -DskipTests
 ```
 
 # Presto Plugins
