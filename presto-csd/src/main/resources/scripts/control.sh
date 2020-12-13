@@ -104,7 +104,7 @@ createJMXCatalog() {
 createHiveCatalog() {
   echo 'connector.name=hive-hadoop2'> etc/catalog/hive.properties
   echo 'hive.metastore.uri=thrift://bigdata-util-gateway-01.chinagoods.te:9083'>> etc/catalog/hive.properties
-  echo 'hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml'>> etc/catalog/hive.properties
+  echo 'hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml,/etc/sentry/sentry-site.xml,/etc/hive/conf/hive-site.xml'>> etc/catalog/hive.properties
   echo 'hive.metastore.username=hive'>> etc/catalog/hive.properties
   echo 'hive.security=sentry'>> etc/catalog/hive.properties
   echo 'sentry.server=sentryserver'>> etc/catalog/hive.properties
