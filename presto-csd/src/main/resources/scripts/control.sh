@@ -136,10 +136,11 @@ setup_environment() {
     fi
   done
   cd ..
-  
-  mkdir plugin
+
+  pwd
+  mkdir -p plugin
   if [ $? -ne 0 ]; then
-	echo "Could not create plugin dir"
+	  echo "Could not create plugin dir"
     exit 1
   fi
 
