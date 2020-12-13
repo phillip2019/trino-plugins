@@ -100,6 +100,12 @@ createJMXCatalog() {
   echo 'connector.name=jmx'>etc/catalog/jmx.properties
 }
 
+# csd创建，配置文件转义:-> \:
+createHiveCatalog() {
+  echo 'connector.name=hive-hadoop2'> etc/catalog/hive.properties
+  echo 'hive.metastore.uri=thrift://bigdata-util-gateway-01.chinagoods.te:9083'>> etc/catalog/hive.properties
+}
+
 createCDHCatalogs() {
   if [ -s catalog.json ]; then
     cat catalog.json | java -jar $PRESTO_INSTALL/ft_json_to_catalog/presto-json-catalog-*.jar etc/catalog/
@@ -117,6 +123,7 @@ setup_environment() {
 
   createJMXCatalog
   createCDHCatalogs
+  createHiveCatalog
 
   HADOOP_USER_NAME=presto hadoop fs -get catalog/* etc/catalog/
   if [ $? -ne 0 ]; then
