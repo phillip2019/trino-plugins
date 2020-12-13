@@ -141,8 +141,7 @@
         ],
         "auxConfigGenerators" : [
           {
-            "filename" : "catalog.json",
-            "configFormat" : "json"
+            "filename" : "catalog.json"
           }
         ]
       },
@@ -229,8 +228,7 @@
         ],
         "auxConfigGenerators" : [
           {
-            "filename" : "catalog.json",
-            "configFormat" : "json"
+            "filename" : "catalog.json"
           }
         ]
       },
