@@ -128,9 +128,8 @@ setup_environment() {
   mkdir lib
   # Link existing libs
   cd lib
-  pwd
   for f in $PARCEL_DIR/lib/*; do
-    ln -s $f
+    ln -s $f || pwd
     if [ $? -ne 0 ]; then
       echo "Could not link $PARCEL_DIR/lib/$f locally"
       exit 1
