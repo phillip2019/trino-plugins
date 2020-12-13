@@ -55,7 +55,7 @@ public class JsonToCatalogFile {
       String name = (String) keys.next();
       Object value = jsonObject.get(name);
       // 替换掉/符号为U，去掉转义符号
-      String escapeVal = value.toString().replace("//", "");
+      String escapeVal = value.toString().replace("\", "");
       properties.setProperty(name, escapeVal);
     }
     FileOutputStream outputStream = new FileOutputStream(file);

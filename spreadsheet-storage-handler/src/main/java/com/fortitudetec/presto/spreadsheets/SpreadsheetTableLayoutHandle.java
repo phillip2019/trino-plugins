@@ -33,5 +33,4 @@ public class SpreadsheetTableLayoutHandle implements ConnectorTableLayoutHandle 
   public SpreadsheetTableHandle getTable() {
     return _table;
   }
-
 }
