@@ -201,7 +201,7 @@
       	  {
             "filename" : "config.properties",
             "configFormat" : "properties",
-            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir"]
+            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir", "log_level_com_facebook_presto"]
           },
           {
             "filename" : "node.properties",
