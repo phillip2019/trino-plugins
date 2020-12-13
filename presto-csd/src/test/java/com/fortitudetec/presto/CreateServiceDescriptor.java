@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import io.airlift.discovery.server.EmbeddedDiscoveryModule;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.weakref.jmx.guice.MBeanModule;
 
+import com.facebook.presto.discovery.EmbeddedDiscoveryModule;
 import com.facebook.presto.eventlistener.EventListenerModule;
 import com.facebook.presto.security.AccessControlModule;
 import com.facebook.presto.server.GracefulShutdownModule;
