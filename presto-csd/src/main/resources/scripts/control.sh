@@ -128,6 +128,7 @@ setup_environment() {
   mkdir lib
   # Link existing libs
   cd lib
+  pwd
   for f in $PARCEL_DIR/lib/*; do
     ln -s $f
     if [ $? -ne 0 ]; then
