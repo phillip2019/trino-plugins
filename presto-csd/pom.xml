@@ -21,7 +21,10 @@
 		<dependency>
 			<groupId>com.facebook.presto</groupId>
 			<artifactId>presto-main</artifactId>
-			<version>${presto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.facebook.presto</groupId>
+			<artifactId>presto-server</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

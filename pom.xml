@@ -77,6 +77,12 @@ under the License.
 				<artifactId>presto-jdbc</artifactId>
 				<version>${presto.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.facebook.presto/presto-server -->
+			<dependency>
+				<groupId>com.facebook.presto</groupId>
+				<artifactId>presto-server</artifactId>
+				<version>${presto.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.json</groupId>
 				<artifactId>json</artifactId>
