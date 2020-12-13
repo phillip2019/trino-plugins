@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 PRESTO_HOME="/var/lib/presto"
 PRESTO_ETC="./etc"
