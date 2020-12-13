@@ -102,9 +102,7 @@ createJMXCatalog() {
 
 createCDHCatalogs() {
   if [ -s catalog.properties ]; then
-    cat catalog.properties
-  else
-    java -jar $PRESTO_INSTALL/ft_json_to_catalog/presto-json-catalog-*.jar etc/catalog/
+    cat catalog.properties | java -jar $PRESTO_INSTALL/ft_json_to_catalog/presto-json-catalog-*.jar etc/catalog/
   fi
 }
 
