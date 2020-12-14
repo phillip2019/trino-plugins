@@ -130,7 +130,7 @@ setup_environment() {
 
   createJMXCatalog
   createCDHCatalogs
-  createHiveCatalog
+#  createHiveCatalog
 
   HADOOP_USER_NAME=presto hadoop fs -get catalog/* etc/catalog/
   if [ $? -ne 0 ]; then

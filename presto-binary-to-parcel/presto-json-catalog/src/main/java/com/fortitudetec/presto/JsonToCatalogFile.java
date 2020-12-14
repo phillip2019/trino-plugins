@@ -29,24 +29,24 @@ import org.json.JSONObject;
 
 public class JsonToCatalogFile {
 
-//  public static void main(String[] args) throws IOException, JSONException {
-//    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//    String line;
-//    StringBuilder builder = new StringBuilder();
-//    while ((line = reader.readLine()) != null) {
-//      builder.append(line);
-//    }
-//
-//    File catalogDir = new File(args[0]);
-//    catalogDir.mkdirs();
-//    JSONObject jsonObject = new JSONObject(builder.toString());
-//    Iterator<?> keys = jsonObject.keys();
-//    while (keys.hasNext()) {
-//      String name = (String) keys.next();
-//      File file = new File(catalogDir, name + ".properties");
-//      writeProperties(file, jsonObject.getJSONObject(name));
-//    }
-//  }
+  public static void main(String[] args) throws IOException, JSONException {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    String line;
+    StringBuilder builder = new StringBuilder();
+    while ((line = reader.readLine()) != null) {
+      builder.append(line);
+    }
+
+    File catalogDir = new File(args[0]);
+    catalogDir.mkdirs();
+    JSONObject jsonObject = new JSONObject(builder.toString());
+    Iterator<?> keys = jsonObject.keys();
+    while (keys.hasNext()) {
+      String name = (String) keys.next();
+      File file = new File(catalogDir, name + ".properties");
+      writeProperties(file, jsonObject.getJSONObject(name));
+    }
+  }
 
   private static void writeProperties(File file, JSONObject jsonObject) throws JSONException, IOException {
     Iterator<?> keys = jsonObject.keys();
