@@ -16,11 +16,8 @@
  */
 package com.fortitudetec.presto;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Properties;
 
@@ -50,16 +47,24 @@ public class JsonToCatalogFile {
 
   private static void writeProperties(File file, JSONObject jsonObject) throws JSONException, IOException {
     Iterator<?> keys = jsonObject.keys();
-    Properties properties = new Properties();
+//    Properties properties = new Properties();
+    FileOutputStream outputStream = new FileOutputStream(file);
+    StringBuffer sb = new StringBuffer();
+    sb.append("#Generated via fortitudetec json to catalog project.");
+    sb.append('\n');
+    sb.append("#" + LocalDateTime.now());
+    sb.append('\n');
     while (keys.hasNext()) {
       String name = (String) keys.next();
       Object value = jsonObject.get(name);
-      // 替换掉/符号为U，去掉转义符号
-      String escapeVal = value.toString().replace("\\\\", "").replace("\\", "");
-      properties.setProperty(name, escapeVal);
+//      properties.setProperty(name, value.toString());
+      sb.append(name);
+      sb.append("=");
+      sb.append(value.toString());
+      sb.append('\n');
     }
-    FileOutputStream outputStream = new FileOutputStream(file);
-    properties.store(outputStream, "Generated via fortitudetec json to catalog project.");
+//    properties.store(outputStream, "Generated via fortitudetec json to catalog project.");
+    outputStream.write(sb.toString().getBytes());
     outputStream.close();
   }
 }
