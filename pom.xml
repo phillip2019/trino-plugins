@@ -20,13 +20,13 @@ under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.fortitudetec.presto</groupId>
-	<artifactId>presto</artifactId>
+	<groupId>com.chinagoods.trino</groupId>
+	<artifactId>trino</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>presto plugins</name>
+	<name>trino plugins</name>
 	<properties>
-		<presto.version>0.211</presto.version>
+		<trino.version>351</trino.version>
 		<guava.version>18.0</guava.version>
 		<javax.inject>1</javax.inject>
 		<junit.version>4.12</junit.version>
@@ -57,31 +57,32 @@ under the License.
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.facebook.presto</groupId>
-				<artifactId>presto-spi</artifactId>
-				<version>${presto.version}</version>
+				<groupId>io.trino</groupId>
+				<artifactId>trino-spi</artifactId>
+				<version>${trino.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.facebook.presto</groupId>
-				<artifactId>presto-tests</artifactId>
-				<version>${presto.version}</version>
+				<groupId>io.trino</groupId>
+				<artifactId>trino-tests</artifactId>
+				<version>${trino.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.facebook.presto</groupId>
-				<artifactId>presto-main</artifactId>
-				<version>${presto.version}</version>
+				<groupId>io.trino</groupId>
+				<artifactId>trino-main</artifactId>
+				<version>${trino.version}</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.facebook.presto/presto-jdbc -->
+			<!-- https://mvnrepository.com/artifact/io.trino/trino-jdbc -->
 			<dependency>
-				<groupId>com.facebook.presto</groupId>
-				<artifactId>presto-jdbc</artifactId>
-				<version>${presto.version}</version>
+				<groupId>io.trino</groupId>
+				<artifactId>trino-jdbc</artifactId>
+				<version>${trino.version}</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.facebook.presto/presto-server -->
+
+			<!-- https://mvnrepository.com/artifact/io.trino/trino-server-main  -->
 			<dependency>
-				<groupId>com.facebook.presto</groupId>
-				<artifactId>presto-server</artifactId>
-				<version>${presto.version}</version>
+				<groupId>io.trino</groupId>
+				<artifactId>trino-server-main</artifactId>
+				<version>${trino.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.json</groupId>
@@ -144,7 +145,7 @@ under the License.
 				<version>${zookeeper.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.fortitudetec.presto</groupId>
+				<groupId>com.fortitudetec.trino</groupId>
 				<artifactId>base-storage-handler</artifactId>
 				<version>${base-storage-handler.version}</version>
 			</dependency>

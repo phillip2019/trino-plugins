@@ -13,12 +13,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.fortitudetec.presto</groupId>
-		<artifactId>presto</artifactId>
+		<groupId>com.chinagoods.trino</groupId>
+		<artifactId>trino</artifactId>
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.fortitudetec.presto</groupId>
+	<groupId>com.fortitudetec.trino</groupId>
 	<artifactId>base-storage-handler</artifactId>
 	<version>${base-storage-handler.version}</version>
 	<packaging>jar</packaging>
@@ -32,8 +32,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.facebook.presto</groupId>
-			<artifactId>presto-spi</artifactId>
+			<groupId>io.trino</groupId>
+			<artifactId>trino-spi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -45,8 +45,8 @@
 		</dependency>
 		<!-- Test Deps -->
 		<dependency>
-			<groupId>com.facebook.presto</groupId>
-			<artifactId>presto-tests</artifactId>
+			<groupId>io.trino</groupId>
+			<artifactId>trino-tests</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

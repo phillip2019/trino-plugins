@@ -3,11 +3,11 @@
   "name": "${project.parcel.name}",
   "version" : "${project.version}",
   "setActiveSymlink": true,
-  "depends": "PRESTO",
+  "depends": "TRINO",
   "replaces":"${project.parcel.name}",
   "conflicts":"",
   "provides": [
-    "PRESTO-PLUGIN"
+    "TRINO-PLUGIN"
   ],
   "scripts": {"defines":"parcel_env.sh"},
   "components": [
@@ -19,11 +19,11 @@
   ],
   "packages" : [],
   "users":  {
-    "presto": {
+    "trino": {
       "longname": "persto",
       "shell": "/bin/bash",
-      "home": "/var/lib/presto",
-      "extra_groups": ["hive", "presto"]
+      "home": "/var/lib/trino",
+      "extra_groups": ["hive", "trino"]
     }
   },
   "groups": []

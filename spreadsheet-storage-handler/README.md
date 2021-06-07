@@ -1,6 +1,6 @@
 # Spreadsheet Storage Handler
 
-This storage handler allow a user to place spreadsheets (.xlsx format) in their Hdfs home directory and then perform SQL queries against them via Presto.
+This storage handler allow a user to place spreadsheets (.xlsx format) in their Hdfs home directory and then perform SQL queries against them via Trino.
 
 ### Building
 
@@ -12,9 +12,9 @@ The current project is based on Hadoop CD5, if you want a specific version of Ha
 
     mvn package -Dhadoop.version=2.6.0
 
-After cloning and building extract the `spreadsheet-storage-handler-*-plugin.tar.gz` into the plugin directory in your Presto installation.
+After cloning and building extract the `spreadsheet-storage-handler-*-plugin.tar.gz` into the plugin directory in your Trino installation.
 
-Next configure your spreadsheet catalog by adding a `spreadsheet.properties` file in the `etc/catalog` directory in your Presto installation.
+Next configure your spreadsheet catalog by adding a `spreadsheet.properties` file in the `etc/catalog` directory in your Trino installation.
 
 #### Example spreadsheet.properties file:
 
@@ -24,38 +24,38 @@ Next configure your spreadsheet catalog by adding a `spreadsheet.properties` fil
 
 #### Usage
 
-Next place your desired spreadsheet in your home directory.  For example if your username is `user1` then you would need to place the spreadsheet in the `hdfs://<namenode>/user/user1/spreadsheets` directory.  Once the file is in place a new schema in the spreadsheet catalog will appear.  Each sheet in the spreadsheet will be represented as table in Presto.
+Next place your desired spreadsheet in your home directory.  For example if your username is `user1` then you would need to place the spreadsheet in the `hdfs://<namenode>/user/user1/spreadsheets` directory.  Once the file is in place a new schema in the spreadsheet catalog will appear.  Each sheet in the spreadsheet will be represented as table in Trino.
 
 #### Schema & Table Mapping
 
-The following XLSX example [Presto Example.xlsx](
-https://docs.google.com/spreadsheets/d/1I708PZJDYvtTouQWhC4kXjxAAB04nnpkmdwEZ6MMuec/edit#gid=0 "Presto Example.xlsx") has two sheets:
+The following XLSX example [Trino Example.xlsx](
+https://docs.google.com/spreadsheets/d/1I708PZJDYvtTouQWhC4kXjxAAB04nnpkmdwEZ6MMuec/edit#gid=0 "Trino Example.xlsx") has two sheets:
 
 - Simple Sheet
 - Multiple Types Per Column
 
-This will produce a new shema of `presto_example_xlsx` with two tables:
+This will produce a new shema of `trino_example_xlsx` with two tables:
 - simple_sheet
 - multiple_types_per_column
 
-##### Presto Representaion
+##### Trino Representaion
 
-###### Connect with Presto CLI
+###### Connect with Trino CLI
 
-    java -jar presto-cli-*-executable.jar --catalog spreadsheet --user user1
+    java -jar trino-cli-*-executable.jar --catalog spreadsheet --user user1
 
 ###### Show Schemas
 
-    presto:default> show schemas;
+    trino:default> show schemas;
             Schema         
     -----------------------
-    presto_example_xlsx
+    trino_example_xlsx
     (1 row)
 
 ###### Show Tables
 
-    presto:default> use presto_example_xlsx;
-    presto:presto_example_xlsx> show tables;
+    trino:default> use trino_example_xlsx;
+    trino:trino_example_xlsx> show tables;
                Table           
     ---------------------------
     multiple_types_per_column 
@@ -64,7 +64,7 @@ This will produce a new shema of `presto_example_xlsx` with two tables:
 
 ###### Select Data - Simple Sheet
 
-    presto:presto_example_xlsx> select * from simple_sheet;
+    trino:trino_example_xlsx> select * from simple_sheet;
      a |  b  | c | d  
     ---+-----+---+----
      a | 1.0 | 2 | 3  
@@ -76,7 +76,7 @@ This will produce a new shema of `presto_example_xlsx` with two tables:
     (6 rows)
 
 ###### Select Data - Multiple Types Per Column
-    presto:presto_example_xlsx> select * from multiple_types_per_column;
+    trino:trino_example_xlsx> select * from multiple_types_per_column;
      a_number | a_string | b_boolean | b_number | b_string 
     ----------+----------+-----------+----------+----------
      NULL     | test1    | NULL      | NULL     | NULL     
@@ -98,7 +98,7 @@ Spreadsheets are very flexible allowing multiple types per column, however this 
 
 Would translate to:
 
-##### Presto Table
+##### Trino Table
 |a_boolean|a_number|a_string|b|c|d|
 |---|---|---|:---:|---|---|
 |NULL|NULL|abc|3|TRUE|d|
