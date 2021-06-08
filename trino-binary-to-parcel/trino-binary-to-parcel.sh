@@ -5,10 +5,6 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-
-
-
-
 TRINO_TAR_FILE=$1
 TMP_VAR=`echo $TRINO_TAR_FILE | sed -e 's/\.tar\.gz//g'`
 IFS='-' read -a array <<< "$TMP_VAR"
@@ -65,7 +61,7 @@ cat > $TRINO_DIR_META/parcel.json <<JSON
   "packages" : [],
   "users":  {
     "trino": {
-      "longname": "persto",
+      "longname": "trino",
       "shell": "/bin/bash",
       "home": "/var/lib/trino",
       "extra_groups": ["hive", "trino"]
