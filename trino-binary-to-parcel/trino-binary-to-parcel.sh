@@ -13,10 +13,12 @@ echo "Trino version for binary is $TRINO_VERSION"
 
 PROJECT_DIR=`dirname "$0"`
 PROJECT_DIR=`cd "$PROJECT_DIR"; pwd`
+echo "Project directory is $TRINO_VERSION"
 
 PJSON2CAT=$PROJECT_DIR/trino-json-catalog/
 cd $PJSON2CAT
 mvn clean install
+echo "Compile trino-json-catalog is finished"
 cd $PROJECT_DIR
 
 PROJECT_DIR_TMP=$PROJECT_DIR/tmp
@@ -33,6 +35,7 @@ cd $PROJECT_DIR_TMP
 ls -1 | sed -e 'p;s/-server-/-/' | xargs -n2 mv
 #TRINO_DIR=`ls -1`
 TRINO_DIR_LOWERCASE=`ls -1`
+echo "Trino directory is $TRINO_DIR_LOWERCASE"
 TRINO_DIR=`echo $TRINO_DIR_LOWERCASE | awk '{print toupper($0)}'`
 mv $TRINO_DIR_LOWERCASE $TRINO_DIR
 

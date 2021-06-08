@@ -9,7 +9,7 @@
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 	<groupId>com.chinagoods.trino</groupId>
-	<artifactId>trino</artifactId>
+	<artifactId>trino-json-catalog</artifactId>
 	<version>${trino.version}.1.0</version>
 	<packaging>jar</packaging>
 	<dependencies>
@@ -33,7 +33,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.fortitudetec.trino.JsonToCatalogFile</mainClass>
+									<mainClass>com.chinagoods.trino.JsonToCatalogFile</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>

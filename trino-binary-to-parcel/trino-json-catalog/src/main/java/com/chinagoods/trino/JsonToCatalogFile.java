@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.chinagoods.bigdata.trino;
+package com.chinagoods.trino;
 
 import java.io.*;
 import java.time.LocalDateTime;
