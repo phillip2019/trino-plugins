@@ -12,6 +12,8 @@ This repo contains to following Trino plugins.
 
 
 # 打包编译trino二进制发行包
-```aspectj
-mvn clean package -DskipTests
+```shell script
+cd trino-binary-to-parcel/
+
+bash trino-binary-to-parcel.sh trino-server-358.tar.gz
 ```
