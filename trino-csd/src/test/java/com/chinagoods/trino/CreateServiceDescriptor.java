@@ -1,53 +1,17 @@
 package com.chinagoods.trino;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import io.trino.eventlistener.EventListenerModule;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.weakref.jmx.guice.MBeanModule;
-
-import io.trino.security.AccessControlModule;
-import io.trino.server.GracefulShutdownModule;
-import io.trino.server.ServerMainModule;
-import io.trino.server.security.ServerSecurityModule;
 import com.google.common.base.Splitter;
-import com.google.common.collect.ImmutableList;
-import com.google.inject.Module;
 import com.google.inject.spi.Message;
-
 import io.airlift.configuration.ConfigurationFactory;
 import io.airlift.configuration.ConfigurationInspector;
 import io.airlift.configuration.ConfigurationInspector.ConfigAttribute;
 import io.airlift.configuration.ConfigurationInspector.ConfigRecord;
-import io.airlift.discovery.client.DiscoveryModule;
-import io.airlift.event.client.JsonEventModule;
-import io.airlift.http.server.HttpServerModule;
-import io.airlift.jaxrs.JaxrsModule;
-import io.airlift.jmx.JmxHttpModule;
-import io.airlift.jmx.JmxModule;
-import io.airlift.json.JsonModule;
-import io.airlift.log.LogJmxModule;
-import io.airlift.node.NodeModule;
-import io.airlift.tracetoken.TraceTokenModule;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.*;
+import java.util.*;
 
 public class CreateServiceDescriptor {
 
