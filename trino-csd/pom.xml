@@ -8,7 +8,7 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.fortitudetec.trino</groupId>
+	<groupId>com.chinagoods.trino</groupId>
 	<artifactId>trino-csd</artifactId>
 	<version>${trino.version}.1.0</version>
 	<packaging>jar</packaging>

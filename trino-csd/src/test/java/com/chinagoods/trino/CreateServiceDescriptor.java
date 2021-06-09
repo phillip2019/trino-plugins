@@ -1,4 +1,4 @@
-package com.chinagoods.bigdata.trino;
+package com.chinagoods.trino;
 
 import java.io.BufferedReader;
 import java.io.File;

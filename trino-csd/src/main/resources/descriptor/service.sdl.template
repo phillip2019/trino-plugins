@@ -52,7 +52,7 @@
     {
       "configName": "http-server.http.port",
       "configurableInWizard": true,
-      "default": 8765,
+      "default": 8766,
       "description": "Set the http port used by Trino on all nodes.",
       "label": "Http Port",
       "name": "http_server_http_port",
@@ -75,7 +75,7 @@
       "default": "INFO",
       "description": "io.trino model log level",
       "label": "Log level io.trino",
-      "name": "log_level_com_facebook_trino",
+      "name": "log_level_io_trino",
       "required": true,
       "validValues" : [ "DEBUG", "INFO", "WARN", "ERROR"],
       "type": "string_enum"
@@ -114,7 +114,7 @@
       	  {
             "filename" : "config.properties",
             "configFormat" : "properties",
-            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir", "log_level_com_facebook_trino"]
+            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir", "log_level_io_trino"]
           },
           {
             "filename" : "node.properties",
@@ -129,7 +129,7 @@
           {
               "filename" : "log.properties",
               "configFormat" : "properties",
-              "includedParams":["log_level_com_facebook_trino"]
+              "includedParams":["log_level_io_trino"]
            }
         ],
         "peerConfigGenerators":[
@@ -201,7 +201,7 @@
       	  {
             "filename" : "config.properties",
             "configFormat" : "properties",
-            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir", "log_level_com_facebook_trino"]
+            "excludedParams":["node_environment","node_data_dir", "jvm_config", "jvm_heap", "log_dir", "log_level_io_trino"]
           },
           {
             "filename" : "node.properties",
@@ -216,7 +216,7 @@
          {
              "filename" : "log.properties",
              "configFormat" : "properties",
-             "includedParams":["log_level_com_facebook_trino"]
+             "includedParams":["log_level_io_trino"]
           }
         ],
         "peerConfigGenerators":[
