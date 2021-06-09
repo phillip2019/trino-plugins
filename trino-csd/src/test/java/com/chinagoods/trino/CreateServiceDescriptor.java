@@ -19,17 +19,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import io.trino.eventlistener.EventListenerModule;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.weakref.jmx.guice.MBeanModule;
 
-import io.trino.eventlistener.EventListenerModule;
 import io.trino.security.AccessControlModule;
 import io.trino.server.GracefulShutdownModule;
 import io.trino.server.ServerMainModule;
 import io.trino.server.security.ServerSecurityModule;
-import io.trino.sql.parser.SqlParserOptions;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Module;
@@ -40,7 +39,6 @@ import io.airlift.configuration.ConfigurationInspector;
 import io.airlift.configuration.ConfigurationInspector.ConfigAttribute;
 import io.airlift.configuration.ConfigurationInspector.ConfigRecord;
 import io.airlift.discovery.client.DiscoveryModule;
-import io.airlift.event.client.HttpEventModule;
 import io.airlift.event.client.JsonEventModule;
 import io.airlift.http.server.HttpServerModule;
 import io.airlift.jaxrs.JaxrsModule;
@@ -97,26 +95,26 @@ public class CreateServiceDescriptor {
 //              new ServerMainModule(sqlParserOptions),
 //              new GracefulShutdownModule());
 
-        ImmutableList.Builder<Module> modules = ImmutableList.builder();
-        modules.add(new NodeModule(),
-                new DiscoveryModule(),
-                new HttpServerModule(),
-                new JsonModule(),
-                new JaxrsModule(true),
-                new MBeanModule(),
-                new JmxModule(),
-                new JmxHttpModule(),
-                new LogJmxModule(),
-                new TraceTokenModule(),
-                new JsonEventModule(),
-                new HttpEventModule(),
-//                new EmbeddedDiscoveryModule(),
-                new ServerSecurityModule(),
-                new AccessControlModule(),
-                new EventListenerModule(),
-                new ServerMainModule(new SqlParserOptions()),
-                new GracefulShutdownModule()
-        );
+//        ImmutableList.Builder<Module> modules = ImmutableList.builder();
+//        modules.add(new NodeModule(),
+//                new DiscoveryModule(),
+//                new HttpServerModule(),
+//                new JsonModule(),
+//                new JaxrsModule(true),
+//                new MBeanModule(),
+//                new JmxModule(),
+//                new JmxHttpModule(),
+//                new LogJmxModule(),
+//                new TraceTokenModule(),
+//                new JsonEventModule(),
+//                new HttpEventModule(),
+////                new EmbeddedDiscoveryModule(),
+//                new ServerSecurityModule(),
+//                new AccessControlModule(),
+//                new EventListenerModule(),
+//                new ServerMainModule(new SqlParserOptions()),
+//                new GracefulShutdownModule()
+//        );
 
         List<Message> messages = factory.validateRegisteredConfigurationProvider();
 
