@@ -45,6 +45,10 @@ under the License.
 			<url>file://${basedir}/../lib</url>
 		</repository>
 		<repository>
+			<id>public</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+		</repository>
+		<repository>
 			<id>cloudera</id>
 			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
 		</repository>
